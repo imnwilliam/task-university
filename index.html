@@ -3,95 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task University</title>
-    <!-- Importando Tailwind CSS por CDN -->
+    <title>Dashboard - Task University</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans min-h-screen">
-
-    <!-- Barra de Navegación -->
     <nav class="bg-indigo-600 shadow-lg">
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex justify-between items-center py-4">
                 <div class="text-white font-bold text-xl flex items-center gap-2">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
                     Task University
                 </div>
                 <div class="hidden md:flex space-x-6 text-white font-medium">
-                    <a href="#modulo-usuarios" class="hover:text-indigo-200 transition">Usuarios</a>
-                    <a href="#modulo-tareas" class="hover:text-indigo-200 transition">Tareas</a>
-                    <a href="#modulo-dashboard" class="hover:text-indigo-200 transition">Dashboard</a>
+                    <a href="usuarios.html" class="hover:text-indigo-200 transition">Usuarios</a>
+                    <a href="tareas.html" class="hover:text-indigo-200 transition">Tareas</a>
+                    <a href="index.html" class="text-indigo-200">Dashboard</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Contenedor Principal -->
-    <main class="max-w-6xl mx-auto px-4 py-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-
-        <!-- ========================================== -->
-        <!-- MÓDULO DE USUARIOS (Para tu rama)          -->
-        <!-- ========================================== -->
-        <section id="modulo-usuarios" class="bg-white rounded-xl shadow-md p-6 border-t-4 border-blue-500 md:col-span-1 h-fit">
-            <h2 class="text-xl font-bold text-gray-700 mb-4 flex items-center gap-2">
-                👥 Gestión de Usuarios
-            </h2>
-            <p class="text-sm text-gray-500 mb-4">Registra nuevos miembros del equipo.</p>
-            
-            <form id="form-usuarios" class="space-y-4">
-                <div>
-                    <label class="block text-sm font-medium text-gray-600">Nombre completo</label>
-                    <input type="text" id="nombre-usuario" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm border p-2 focus:ring-indigo-500 focus:border-indigo-500" placeholder="Ej. Juan Pérez">
-                </div>
-                <button type="submit" class="w-full bg-blue-500 text-white rounded-md py-2 hover:bg-blue-600 transition font-medium">
-                    Registrar Usuario
-                </button>
-            </form>
-
-            <div class="mt-6">
-                <h3 class="font-semibold text-gray-700 mb-2">Usuarios Registrados:</h3>
-                <ul id="lista-usuarios" class="space-y-2 divide-y divide-gray-100">
-                    <!-- Los usuarios aparecerán aquí vía JS -->
-                </ul>
-            </div>
-        </section>
-
-        <!-- ========================================== -->
-        <!-- MÓDULO DE TAREAS (Para tu compañero)       -->
-        <!-- ========================================== -->
-        <section id="modulo-tareas" class="bg-white rounded-xl shadow-md p-6 border-t-4 border-green-500 md:col-span-2">
-            <h2 class="text-xl font-bold text-gray-700 mb-4 flex items-center gap-2">
-                ✅ Gestión de Tareas
-            </h2>
-            
-            <form id="form-tareas" class="flex gap-4 mb-6">
-                <input type="text" id="titulo-tarea" class="flex-1 rounded-md border-gray-300 shadow-sm border p-2 focus:ring-green-500 focus:border-green-500" placeholder="¿Qué necesitas hacer?">
-                <button type="submit" class="bg-green-500 text-white px-6 py-2 rounded-md hover:bg-green-600 transition font-medium">
-                    Agregar Tarea
-                </button>
-            </form>
-
-            <div id="contenedor-tareas" class="space-y-3">
-                <!-- Las tareas aparecerán aquí vía JS. Aquí hay un ejemplo visual estático: -->
-                <div class="flex justify-between items-center p-4 bg-gray-50 rounded-lg border border-gray-100 shadow-sm">
-                    <div class="flex items-center gap-3">
-                        <input type="checkbox" class="w-5 h-5 text-green-500 rounded focus:ring-green-400">
-                        <span class="text-gray-700 font-medium">Ejemplo: Estudiar para el examen</span>
-                    </div>
-                    <div class="flex gap-2">
-                        <button class="text-sm bg-yellow-100 text-yellow-700 px-3 py-1 rounded hover:bg-yellow-200">Editar</button>
-                        <button class="text-sm bg-red-100 text-red-700 px-3 py-1 rounded hover:bg-red-200">Eliminar</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ========================================== -->
-        <!-- MÓDULO DASHBOARD (Para tu otro compañero)  -->
-        <!-- ========================================== -->
-        <section id="modulo-dashboard" class="bg-white rounded-xl shadow-md p-6 border-t-4 border-purple-500 md:col-span-3">
-            <h2 class="text-xl font-bold text-gray-700 mb-4">📊 Dashboard y Estadísticas</h2>
-            
+    <main class="max-w-4xl mx-auto px-4 py-8">
+        <section class="bg-white rounded-xl shadow-md p-6 border-t-4 border-purple-500">
+            <h2 class="text-xl font-bold text-gray-700 mb-6">📊 Dashboard y Estadísticas</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
                 <div class="bg-purple-50 p-4 rounded-lg border border-purple-100">
                     <h3 class="text-purple-800 font-semibold text-lg">Total Tareas</h3>
@@ -107,9 +40,8 @@
                 </div>
             </div>
         </section>
-
     </main>
 
-    <script src="app.js"></script>
+    <script src="dashboard.js"></script>
 </body>
 </html>
