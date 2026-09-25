@@ -2,19 +2,22 @@ let usuarios = [];
 
 const formUsuarios = document.getElementById('form-usuarios');
 const inputNombreUsuario = document.getElementById('nombre-usuario');
+const inputEmailUsuario = document.getElementById('email-usuario');
 const listaUsuarios = document.getElementById('lista-usuarios');
 
 formUsuarios.addEventListener('submit', function(e) {
     e.preventDefault();
 
     const nombre = inputNombreUsuario.value.trim();
+    const email = inputEmailUsuario.value.trim();
 
-    if (nombre === "") {
+    if (nombre === "" || email === "") {
         return;
     }
 
     const usuarioExiste = usuarios.some(
-        usuario => usuario.toLowerCase() === nombre.toLowerCase()
+        usuario => usuario.nombre.toLowerCase() === nombre.toLowerCase()
+            || usuario.email.toLowerCase() === email.toLowerCase()
     );
 
     if (usuarioExiste) {
@@ -22,8 +25,9 @@ formUsuarios.addEventListener('submit', function(e) {
         return;
     }
 
-    usuarios.push(nombre);
+    usuarios.push({ nombre, email });
     inputNombreUsuario.value = '';
+    inputEmailUsuario.value = '';
     renderizarUsuarios();
 });
 
@@ -39,7 +43,10 @@ function renderizarUsuarios() {
             <span class="bg-blue-100 text-blue-700 p-1 rounded-full text-xs">
                 👤
             </span>
-            ${usuario}
+            <span>
+                <span class="font-medium">${usuario.nombre}</span>
+                <span class="block text-xs text-gray-500">${usuario.email}</span>
+            </span>
         `;
 
         listaUsuarios.appendChild(li);
